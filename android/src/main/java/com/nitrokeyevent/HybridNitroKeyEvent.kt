@@ -1,4 +1,4 @@
-package com.nitrokeyevent
+package com.margelo.nitro.nitrokeyevent
 
 import android.view.KeyEvent
 import com.facebook.react.bridge.Arguments

@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-keyevent",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react-native-nitro-keyevent is a react native package built with Nitro",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
@@ -38,9 +38,6 @@
     "app.plugin.js",
     "*.podspec",
     "README.md"
-  ],
-  "workspaces": [
-    "example"
   ],
   "repository": "https://github.com/tconns/react-native-nitro-keyevent.git",
   "author": "Thành Công",

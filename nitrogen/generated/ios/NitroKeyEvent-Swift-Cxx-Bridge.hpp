@@ -27,24 +27,24 @@ namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
  */
 namespace margelo::nitro::nitrokeyevent::bridge::swift {
 
-  // pragma MARK: std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>
+  // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
   /**
-   * Specialized version of `std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>`.
+   * Specialized version of `std::shared_ptr<HybridNitroKeyEventSpec>`.
    */
-  using std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ = std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>;
-  std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec> create_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer);
-  void* _Nonnull get_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ cppType);
+  using std__shared_ptr_HybridNitroKeyEventSpec_ = std::shared_ptr<HybridNitroKeyEventSpec>;
+  std::shared_ptr<HybridNitroKeyEventSpec> create_std__shared_ptr_HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer) noexcept;
+  void* _Nonnull get_std__shared_ptr_HybridNitroKeyEventSpec_(std__shared_ptr_HybridNitroKeyEventSpec_ cppType) noexcept;
   
-  // pragma MARK: std::weak_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>
-  using std__weak_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ = std::weak_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>;
-  inline std__weak_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ weakify_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(const std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>& strong) { return strong; }
+  // pragma MARK: std::weak_ptr<HybridNitroKeyEventSpec>
+  using std__weak_ptr_HybridNitroKeyEventSpec_ = std::weak_ptr<HybridNitroKeyEventSpec>;
+  inline std__weak_ptr_HybridNitroKeyEventSpec_ weakify_std__shared_ptr_HybridNitroKeyEventSpec_(const std::shared_ptr<HybridNitroKeyEventSpec>& strong) noexcept { return strong; }
   
   // pragma MARK: Result<double>
   using Result_double_ = Result<double>;
-  inline Result_double_ create_Result_double_(double value) {
+  inline Result_double_ create_Result_double_(double value) noexcept {
     return Result<double>::withValue(std::move(value));
   }
-  inline Result_double_ create_Result_double_(const std::exception_ptr& error) {
+  inline Result_double_ create_Result_double_(const std::exception_ptr& error) noexcept {
     return Result<double>::withError(error);
   }
 

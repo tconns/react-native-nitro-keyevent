@@ -1,4 +1,4 @@
-package com.nitrokeyeventexample
+package com.margelo.nitro.nitrokeyeventexample
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

@@ -24,7 +24,7 @@
   HybridObjectRegistry::registerHybridObjectConstructor(
     "NitroKeyEvent",
     []() -> std::shared_ptr<HybridObject> {
-      std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec> hybridObject = NitroKeyEvent::NitroKeyEventAutolinking::createNitroKeyEvent();
+      std::shared_ptr<HybridNitroKeyEventSpec> hybridObject = NitroKeyEvent::NitroKeyEventAutolinking::createNitroKeyEvent();
       return hybridObject;
     }
   );

@@ -33,7 +33,7 @@ open class HybridNitroKeyEventSpec_cxx {
   /**
    * Holds a weak pointer to the C++ class that wraps the Swift class.
    */
-  private var __cxxPart: bridge.std__weak_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_
+  private var __cxxPart: bridge.std__weak_ptr_HybridNitroKeyEventSpec_
 
   /**
    * Create a new `HybridNitroKeyEventSpec_cxx` that wraps the given `HybridNitroKeyEventSpec`.
@@ -72,15 +72,15 @@ open class HybridNitroKeyEventSpec_cxx {
 
   /**
    * Gets (or creates) the C++ part of this Hybrid Object.
-   * The C++ part is a `std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>`.
+   * The C++ part is a `std::shared_ptr<HybridNitroKeyEventSpec>`.
    */
-  public func getCxxPart() -> bridge.std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ {
+  public func getCxxPart() -> bridge.std__shared_ptr_HybridNitroKeyEventSpec_ {
     let cachedCxxPart = self.__cxxPart.lock()
     if cachedCxxPart.__convertToBool() {
       return cachedCxxPart
     } else {
-      let newCxxPart = bridge.create_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(self.toUnsafe())
-      __cxxPart = bridge.weakify_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(newCxxPart)
+      let newCxxPart = bridge.create_std__shared_ptr_HybridNitroKeyEventSpec_(self.toUnsafe())
+      __cxxPart = bridge.weakify_std__shared_ptr_HybridNitroKeyEventSpec_(newCxxPart)
       return newCxxPart
     }
   }

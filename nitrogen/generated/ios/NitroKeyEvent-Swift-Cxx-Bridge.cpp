@@ -13,12 +13,12 @@
 
 namespace margelo::nitro::nitrokeyevent::bridge::swift {
 
-  // pragma MARK: std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec>
-  std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpec> create_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer) {
+  // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
+  std::shared_ptr<HybridNitroKeyEventSpec> create_std__shared_ptr_HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer) noexcept {
     NitroKeyEvent::HybridNitroKeyEventSpec_cxx swiftPart = NitroKeyEvent::HybridNitroKeyEventSpec_cxx::fromUnsafe(swiftUnsafePointer);
     return std::make_shared<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift>(swiftPart);
   }
-  void* _Nonnull get_std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_(std__shared_ptr_margelo__nitro__nitrokeyevent__HybridNitroKeyEventSpec_ cppType) {
+  void* _Nonnull get_std__shared_ptr_HybridNitroKeyEventSpec_(std__shared_ptr_HybridNitroKeyEventSpec_ cppType) noexcept {
     std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift> swiftWrapper = std::dynamic_pointer_cast<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift>(cppType);
     #ifdef NITRO_DEBUG
     if (swiftWrapper == nullptr) [[unlikely]] {

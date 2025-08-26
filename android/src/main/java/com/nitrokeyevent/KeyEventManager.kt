@@ -1,8 +1,8 @@
-package com.nitrokeyevent
+package com.margelo.nitro.nitrokeyevent
 
 import android.view.KeyEvent
 
-class KeyEventActivity private constructor() {
+class KeyEventManager private constructor() {
     companion object {
         private var instance: KeyEventActivity? = null
 

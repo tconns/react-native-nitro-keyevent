@@ -36,7 +36,7 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
-  namespace "com.nitrokeyevent"
+  namespace "com.margelo.nitro.nitrokeyevent"
 
   ndkVersion getExtOrDefault("ndkVersion")
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
@@ -143,6 +143,6 @@ if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
     libraryName = "NitroKeyEvent"
-    codegenJavaPackageName = "com.nitrokeyevent"
+    codegenJavaPackageName = "com.margelo.nitro.nitrokeyevent"
   }
 }

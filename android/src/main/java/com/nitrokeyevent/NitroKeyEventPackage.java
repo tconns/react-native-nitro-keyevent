@@ -1,4 +1,4 @@
-package com.nitrokeyevent;
+package com.margelo.nitro.nitrokeyevent;
 
 import android.util.Log;
 import androidx.annotation.Nullable;
