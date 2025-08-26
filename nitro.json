@@ -1,24 +1,19 @@
 {
   "$schema": "https://nitro.margelo.com/nitro.schema.json",
-  "cxxNamespace": [
-    "nitrokeyevent"
-  ],
+  "cxxNamespace": ["keyevent"],
   "ios": {
     "iosModuleName": "NitroKeyEvent"
   },
   "android": {
-    "androidNamespace": [
-      "nitrokeyevent"
-    ],
+    "androidNamespace": ["keyevent"],
     "androidCxxLibName": "NitroKeyEvent"
   },
   "autolinking": {
     "NitroKeyEvent": {
-      "swift": "HybridNitroKeyEvent",
-      "kotlin": "HybridNitroKeyEvent"
+      "swift": "NitroKeyEvent",
+      "kotlin": "NitroKeyEvent"
     }
   },
-  "ignorePaths": [
-    "**/node_modules"
-  ]
+  "ignorePaths": ["**/node_modules"],
+  "gitAttributesGeneratedFlag": false
 }

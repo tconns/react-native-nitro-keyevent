@@ -17,7 +17,7 @@
 
 
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   using namespace margelo::nitro;
 
@@ -59,4 +59,4 @@ namespace margelo::nitro::nitrokeyevent {
       static constexpr auto TAG = "NitroKeyEvent";
   };
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

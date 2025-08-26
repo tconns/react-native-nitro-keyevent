@@ -19,7 +19,7 @@
 
 + (void) load {
   using namespace margelo::nitro;
-  using namespace margelo::nitro::nitrokeyevent;
+  using namespace margelo::nitro::keyevent;
 
   HybridObjectRegistry::registerHybridObjectConstructor(
     "NitroKeyEvent",

@@ -8,7 +8,7 @@
 #include <jni.h>
 #include <NitroModules/NitroDefines.hpp>
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   /**
    * Initializes the native (C++) part of NitroKeyEvent, and autolinks all Hybrid Objects.
@@ -16,10 +16,10 @@ namespace margelo::nitro::nitrokeyevent {
    * Example:
    * ```cpp (cpp-adapter.cpp)
    * JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void*) {
-   *   return margelo::nitro::nitrokeyevent::initialize(vm);
+   *   return margelo::nitro::keyevent::initialize(vm);
    * }
    * ```
    */
   int initialize(JavaVM* vm);
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

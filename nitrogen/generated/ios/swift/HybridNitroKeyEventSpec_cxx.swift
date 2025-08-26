@@ -19,11 +19,11 @@ import NitroModules
  */
 open class HybridNitroKeyEventSpec_cxx {
   /**
-   * The Swift <> C++ bridge's namespace (`margelo::nitro::nitrokeyevent::bridge::swift`)
+   * The Swift <> C++ bridge's namespace (`margelo::nitro::keyevent::bridge::swift`)
    * from `NitroKeyEvent-Swift-Cxx-Bridge.hpp`.
    * This contains specialized C++ templates, and C++ helper functions that can be accessed from Swift.
    */
-  public typealias bridge = margelo.nitro.nitrokeyevent.bridge.swift
+  public typealias bridge = margelo.nitro.keyevent.bridge.swift
 
   /**
    * Holds an instance of the `HybridNitroKeyEventSpec` Swift protocol.

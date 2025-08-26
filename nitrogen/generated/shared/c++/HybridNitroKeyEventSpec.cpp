@@ -7,7 +7,7 @@
 
 #include "HybridNitroKeyEventSpec.hpp"
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   void HybridNitroKeyEventSpec::loadHybridMethods() {
     // load base methods/properties
@@ -18,4 +18,4 @@ namespace margelo::nitro::nitrokeyevent {
     });
   }
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

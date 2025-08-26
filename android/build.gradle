@@ -5,7 +5,7 @@ buildscript {
   }
 
   dependencies {
-    classpath "com.android.tools.build:gradle:8.8.0"
+    classpath "com.android.tools.build:gradle:8.12.0"
   }
 }
 
@@ -21,7 +21,6 @@ def isNewArchitectureEnabled() {
 apply plugin: "com.android.library"
 apply plugin: 'org.jetbrains.kotlin.android'
 apply from: '../nitrogen/generated/android/NitroKeyEvent+autolinking.gradle'
-apply from: "./fix-prefab.gradle"
 
 if (isNewArchitectureEnabled()) {
   apply plugin: "com.facebook.react"
@@ -36,7 +35,7 @@ def getExtOrIntegerDefault(name) {
 }
 
 android {
-  namespace "com.margelo.nitro.nitrokeyevent"
+  namespace "com.margelo.nitro.keyevent"
 
   ndkVersion getExtOrDefault("ndkVersion")
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
@@ -70,30 +69,30 @@ android {
     }
   }
 
-  packagingOptions {
-    excludes = [
-        "META-INF",
-        "META-INF/**",
-        "**/libc++_shared.so",
-        "**/libfbjni.so",
-        "**/libjsi.so",
-        "**/libfolly_json.so",
-        "**/libfolly_runtime.so",
-        "**/libglog.so",
-        "**/libhermes.so",
-        "**/libhermes-executor-debug.so",
-        "**/libhermes_executor.so",
-        "**/libreactnative.so",
-        "**/libreactnativejni.so",
-        "**/libturbomodulejsijni.so",
-        "**/libreact_nativemodule_core.so",
-        "**/libjscexecutor.so"
-    ]
-  }
-
   buildFeatures {
     buildConfig true
     prefab true
+  }
+
+  packagingOptions {
+    excludes = [
+            "META-INF",
+            "META-INF/**",
+            "**/libc++_shared.so",
+            "**/libfbjni.so",
+            "**/libjsi.so",
+            "**/libfolly_json.so",
+            "**/libfolly_runtime.so",
+            "**/libglog.so",
+            "**/libhermes.so",
+            "**/libhermes-executor-debug.so",
+            "**/libhermes_executor.so",
+            "**/libreactnative.so",
+            "**/libreactnativejni.so",
+            "**/libturbomodulejsijni.so",
+            "**/libreact_nativemodule_core.so",
+            "**/libjscexecutor.so"
+    ]
   }
 
   buildTypes {
@@ -143,6 +142,6 @@ if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
     libraryName = "NitroKeyEvent"
-    codegenJavaPackageName = "com.margelo.nitro.nitrokeyevent"
+    codegenJavaPackageName = "com.margelo.nitro.keyevent"
   }
 }

@@ -11,15 +11,15 @@
 #include "HybridNitroKeyEventSpecSwift.hpp"
 #include "NitroKeyEvent-Swift-Cxx-Umbrella.hpp"
 
-namespace margelo::nitro::nitrokeyevent::bridge::swift {
+namespace margelo::nitro::keyevent::bridge::swift {
 
   // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
   std::shared_ptr<HybridNitroKeyEventSpec> create_std__shared_ptr_HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer) noexcept {
     NitroKeyEvent::HybridNitroKeyEventSpec_cxx swiftPart = NitroKeyEvent::HybridNitroKeyEventSpec_cxx::fromUnsafe(swiftUnsafePointer);
-    return std::make_shared<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift>(swiftPart);
+    return std::make_shared<margelo::nitro::keyevent::HybridNitroKeyEventSpecSwift>(swiftPart);
   }
   void* _Nonnull get_std__shared_ptr_HybridNitroKeyEventSpec_(std__shared_ptr_HybridNitroKeyEventSpec_ cppType) noexcept {
-    std::shared_ptr<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift> swiftWrapper = std::dynamic_pointer_cast<margelo::nitro::nitrokeyevent::HybridNitroKeyEventSpecSwift>(cppType);
+    std::shared_ptr<margelo::nitro::keyevent::HybridNitroKeyEventSpecSwift> swiftWrapper = std::dynamic_pointer_cast<margelo::nitro::keyevent::HybridNitroKeyEventSpecSwift>(cppType);
     #ifdef NITRO_DEBUG
     if (swiftWrapper == nullptr) [[unlikely]] {
       throw std::runtime_error("Class \"HybridNitroKeyEventSpec\" is not implemented in Swift!");
@@ -29,4 +29,4 @@ namespace margelo::nitro::nitrokeyevent::bridge::swift {
     return swiftPart.toUnsafe();
   }
 
-} // namespace margelo::nitro::nitrokeyevent::bridge::swift
+} // namespace margelo::nitro::keyevent::bridge::swift

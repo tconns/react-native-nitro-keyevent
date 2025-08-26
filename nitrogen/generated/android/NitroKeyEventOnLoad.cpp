@@ -18,22 +18,22 @@
 #include "JHybridNitroKeyEventSpec.hpp"
 #include <NitroModules/DefaultConstructableObject.hpp>
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
 int initialize(JavaVM* vm) {
   using namespace margelo::nitro;
-  using namespace margelo::nitro::nitrokeyevent;
+  using namespace margelo::nitro::keyevent;
   using namespace facebook;
 
   return facebook::jni::initialize(vm, [] {
     // Register native JNI methods
-    margelo::nitro::nitrokeyevent::JHybridNitroKeyEventSpec::registerNatives();
+    margelo::nitro::keyevent::JHybridNitroKeyEventSpec::registerNatives();
 
     // Register Nitro Hybrid Objects
     HybridObjectRegistry::registerHybridObjectConstructor(
       "NitroKeyEvent",
       []() -> std::shared_ptr<HybridObject> {
-        static DefaultConstructableObject<JHybridNitroKeyEventSpec::javaobject> object("com/nitrokeyevent/HybridNitroKeyEvent");
+        static DefaultConstructableObject<JHybridNitroKeyEventSpec::javaobject> object("com/margelo/nitro/keyevent/NitroKeyEvent");
         auto instance = object.create();
         auto globalRef = jni::make_global(instance);
         return globalRef->cthis()->shared();
@@ -42,4 +42,4 @@ int initialize(JavaVM* vm) {
   });
 }
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

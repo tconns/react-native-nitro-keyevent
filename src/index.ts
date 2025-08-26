@@ -1,5 +1,5 @@
 import { NitroModules } from 'react-native-nitro-modules'
-import type { NitroKeyEvent as NitroKeyEventSpec } from './specs/nitro-key-event.nitro'
+import type { NitroKeyEvent as NitroKeyEventSpec } from './specs/NitroKeyEvent.nitro'
 import {
   DeviceEventEmitter,
   NativeEventEmitter,
@@ -7,7 +7,7 @@ import {
   Platform,
 } from 'react-native'
 
-class KeyEvent {
+class KeyEventClass {
   listenerKeyDown: any
   listenerKeyUp: any
 
@@ -49,4 +49,4 @@ class KeyEvent {
 export const NitroKeyEvent =
   NitroModules.createHybridObject<NitroKeyEventSpec>('NitroKeyEvent')
 
-export default new KeyEvent()
+export const KeyEvent = new KeyEventClass()

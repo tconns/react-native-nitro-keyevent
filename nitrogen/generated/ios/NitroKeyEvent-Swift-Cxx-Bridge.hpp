@@ -9,7 +9,7 @@
 
 // Forward declarations of C++ defined types
 // Forward declaration of `HybridNitroKeyEventSpec` to properly resolve imports.
-namespace margelo::nitro::nitrokeyevent { class HybridNitroKeyEventSpec; }
+namespace margelo::nitro::keyevent { class HybridNitroKeyEventSpec; }
 
 // Forward declarations of Swift defined types
 // Forward declaration of `HybridNitroKeyEventSpec_cxx` to properly resolve imports.
@@ -25,7 +25,7 @@ namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
  * as well as helper functions to interact with those C++ types from Swift.
  */
-namespace margelo::nitro::nitrokeyevent::bridge::swift {
+namespace margelo::nitro::keyevent::bridge::swift {
 
   // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
   /**
@@ -48,4 +48,4 @@ namespace margelo::nitro::nitrokeyevent::bridge::swift {
     return Result<double>::withError(error);
   }
 
-} // namespace margelo::nitro::nitrokeyevent::bridge::swift
+} // namespace margelo::nitro::keyevent::bridge::swift

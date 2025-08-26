@@ -11,7 +11,7 @@
 
 
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   jni::local_ref<JHybridNitroKeyEventSpec::jhybriddata> JHybridNitroKeyEventSpec::initHybrid(jni::alias_ref<jhybridobject> jThis) {
     return makeCxxInstance(jThis);
@@ -43,4 +43,4 @@ namespace margelo::nitro::nitrokeyevent {
     return __result;
   }
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

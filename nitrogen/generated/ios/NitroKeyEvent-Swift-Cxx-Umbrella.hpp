@@ -9,7 +9,7 @@
 
 // Forward declarations of C++ defined types
 // Forward declaration of `HybridNitroKeyEventSpec` to properly resolve imports.
-namespace margelo::nitro::nitrokeyevent { class HybridNitroKeyEventSpec; }
+namespace margelo::nitro::keyevent { class HybridNitroKeyEventSpec; }
 
 // Include C++ defined types
 #include "HybridNitroKeyEventSpec.hpp"

@@ -7,5 +7,5 @@
 
 #include "HybridNitroKeyEventSpecSwift.hpp"
 
-namespace margelo::nitro::nitrokeyevent {
-} // namespace margelo::nitro::nitrokeyevent
+namespace margelo::nitro::keyevent {
+} // namespace margelo::nitro::keyevent

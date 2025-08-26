@@ -14,14 +14,14 @@
 
 
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   using namespace facebook;
 
   class JHybridNitroKeyEventSpec: public jni::HybridClass<JHybridNitroKeyEventSpec, JHybridObject>,
                                   public virtual HybridNitroKeyEventSpec {
   public:
-    static auto constexpr kJavaDescriptor = "Lcom/margelo/nitro/nitrokeyevent/HybridNitroKeyEventSpec;";
+    static auto constexpr kJavaDescriptor = "Lcom/margelo/nitro/keyevent/HybridNitroKeyEventSpec;";
     static jni::local_ref<jhybriddata> initHybrid(jni::alias_ref<jhybridobject> jThis);
     static void registerNatives();
 
@@ -61,4 +61,4 @@ namespace margelo::nitro::nitrokeyevent {
     jni::global_ref<JHybridNitroKeyEventSpec::javaobject> _javaPart;
   };
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent

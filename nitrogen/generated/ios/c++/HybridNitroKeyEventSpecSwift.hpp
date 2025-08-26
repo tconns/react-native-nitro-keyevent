@@ -18,7 +18,7 @@ namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
 
 #include "NitroKeyEvent-Swift-Cxx-Umbrella.hpp"
 
-namespace margelo::nitro::nitrokeyevent {
+namespace margelo::nitro::keyevent {
 
   /**
    * The C++ part of HybridNitroKeyEventSpec_cxx.swift.
@@ -70,4 +70,4 @@ namespace margelo::nitro::nitrokeyevent {
     NitroKeyEvent::HybridNitroKeyEventSpec_cxx _swiftPart;
   };
 
-} // namespace margelo::nitro::nitrokeyevent
+} // namespace margelo::nitro::keyevent
