@@ -40,7 +40,15 @@
   "keywords": [
     "react-native",
     "nitro",
-    "react-native-nitro-keyevent"
+    "react-native-nitro-keyevent",
+    "keyevent",
+    "keyboard",
+    "external",
+    "android",
+    "module",
+    "remote",
+    "react-native-tvos",
+    "androidtv"
   ],
   "repository": {
     "type": "git",
