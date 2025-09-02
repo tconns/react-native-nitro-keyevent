@@ -13,9 +13,11 @@
 #error NitroModules cannot be found! Are you sure you installed NitroModules properly?
 #endif
 
+// Forward declaration of `KeyEventData` to properly resolve imports.
+namespace margelo::nitro::keyevent { struct KeyEventData; }
 
-
-
+#include "KeyEventData.hpp"
+#include <functional>
 
 namespace margelo::nitro::keyevent {
 
@@ -49,6 +51,8 @@ namespace margelo::nitro::keyevent {
     public:
       // Methods
       virtual double sum(double num1, double num2) = 0;
+      virtual void onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) = 0;
+      virtual void onKeyUpListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) = 0;
 
     protected:
       // Hybrid Setup

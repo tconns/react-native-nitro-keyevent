@@ -15,6 +15,8 @@ public protocol HybridNitroKeyEventSpec_protocol: HybridObject {
 
   // Methods
   func sum(num1: Double, num2: Double) throws -> Double
+  func onKeyDownListener(callback: @escaping (_ keyEvent: KeyEventData) -> Void) throws -> Void
+  func onKeyUpListener(callback: @escaping (_ keyEvent: KeyEventData) -> Void) throws -> Void
 }
 
 /// See ``HybridNitroKeyEventSpec``

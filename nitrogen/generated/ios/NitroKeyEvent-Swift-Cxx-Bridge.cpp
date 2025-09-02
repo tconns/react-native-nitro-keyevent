@@ -13,6 +13,14 @@
 
 namespace margelo::nitro::keyevent::bridge::swift {
 
+  // pragma MARK: std::function<void(const KeyEventData& /* keyEvent */)>
+  Func_void_KeyEventData create_Func_void_KeyEventData(void* _Nonnull swiftClosureWrapper) noexcept {
+    auto swiftClosure = NitroKeyEvent::Func_void_KeyEventData::fromUnsafe(swiftClosureWrapper);
+    return [swiftClosure = std::move(swiftClosure)](const KeyEventData& keyEvent) mutable -> void {
+      swiftClosure.call(keyEvent);
+    };
+  }
+  
   // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
   std::shared_ptr<HybridNitroKeyEventSpec> create_std__shared_ptr_HybridNitroKeyEventSpec_(void* _Nonnull swiftUnsafePointer) noexcept {
     NitroKeyEvent::HybridNitroKeyEventSpec_cxx swiftPart = NitroKeyEvent::HybridNitroKeyEventSpec_cxx::fromUnsafe(swiftUnsafePointer);

@@ -12,9 +12,13 @@
 // Forward declaration of `HybridNitroKeyEventSpec_cxx` to properly resolve imports.
 namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
 
+// Forward declaration of `KeyEventData` to properly resolve imports.
+namespace margelo::nitro::keyevent { struct KeyEventData; }
 
-
-
+#include "KeyEventData.hpp"
+#include <functional>
+#include <string>
+#include <optional>
 
 #include "NitroKeyEvent-Swift-Cxx-Umbrella.hpp"
 
@@ -64,6 +68,18 @@ namespace margelo::nitro::keyevent {
       }
       auto __value = std::move(__result.value());
       return __value;
+    }
+    inline void onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) override {
+      auto __result = _swiftPart.onKeyDownListener(callback);
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+    }
+    inline void onKeyUpListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) override {
+      auto __result = _swiftPart.onKeyUpListener(callback);
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
     }
 
   private:

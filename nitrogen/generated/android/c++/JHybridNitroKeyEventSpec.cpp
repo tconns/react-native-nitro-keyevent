@@ -7,9 +7,15 @@
 
 #include "JHybridNitroKeyEventSpec.hpp"
 
+// Forward declaration of `KeyEventData` to properly resolve imports.
+namespace margelo::nitro::keyevent { struct KeyEventData; }
 
-
-
+#include "KeyEventData.hpp"
+#include <functional>
+#include "JFunc_void_KeyEventData.hpp"
+#include "JKeyEventData.hpp"
+#include <string>
+#include <optional>
 
 namespace margelo::nitro::keyevent {
 
@@ -41,6 +47,14 @@ namespace margelo::nitro::keyevent {
     static const auto method = javaClassStatic()->getMethod<double(double /* num1 */, double /* num2 */)>("sum");
     auto __result = method(_javaPart, num1, num2);
     return __result;
+  }
+  void JHybridNitroKeyEventSpec::onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) {
+    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<JFunc_void_KeyEventData::javaobject> /* callback */)>("onKeyDownListener_cxx");
+    method(_javaPart, JFunc_void_KeyEventData_cxx::fromCpp(callback));
+  }
+  void JHybridNitroKeyEventSpec::onKeyUpListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) {
+    static const auto method = javaClassStatic()->getMethod<void(jni::alias_ref<JFunc_void_KeyEventData::javaobject> /* callback */)>("onKeyUpListener_cxx");
+    method(_javaPart, JFunc_void_KeyEventData_cxx::fromCpp(callback));
   }
 
 } // namespace margelo::nitro::keyevent

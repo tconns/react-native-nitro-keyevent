@@ -10,12 +10,18 @@
 // Forward declarations of C++ defined types
 // Forward declaration of `HybridNitroKeyEventSpec` to properly resolve imports.
 namespace margelo::nitro::keyevent { class HybridNitroKeyEventSpec; }
+// Forward declaration of `KeyEventData` to properly resolve imports.
+namespace margelo::nitro::keyevent { struct KeyEventData; }
 
 // Include C++ defined types
 #include "HybridNitroKeyEventSpec.hpp"
+#include "KeyEventData.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
+#include <functional>
 #include <memory>
+#include <optional>
+#include <string>
 
 // C++ helpers for Swift
 #include "NitroKeyEvent-Swift-Cxx-Bridge.hpp"

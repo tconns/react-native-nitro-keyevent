@@ -10,6 +10,8 @@
 // Forward declarations of C++ defined types
 // Forward declaration of `HybridNitroKeyEventSpec` to properly resolve imports.
 namespace margelo::nitro::keyevent { class HybridNitroKeyEventSpec; }
+// Forward declaration of `KeyEventData` to properly resolve imports.
+namespace margelo::nitro::keyevent { struct KeyEventData; }
 
 // Forward declarations of Swift defined types
 // Forward declaration of `HybridNitroKeyEventSpec_cxx` to properly resolve imports.
@@ -17,9 +19,13 @@ namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
 
 // Include C++ defined types
 #include "HybridNitroKeyEventSpec.hpp"
+#include "KeyEventData.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
+#include <functional>
 #include <memory>
+#include <optional>
+#include <string>
 
 /**
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
@@ -27,6 +33,43 @@ namespace NitroKeyEvent { class HybridNitroKeyEventSpec_cxx; }
  */
 namespace margelo::nitro::keyevent::bridge::swift {
 
+  // pragma MARK: std::optional<double>
+  /**
+   * Specialized version of `std::optional<double>`.
+   */
+  using std__optional_double_ = std::optional<double>;
+  inline std::optional<double> create_std__optional_double_(const double& value) noexcept {
+    return std::optional<double>(value);
+  }
+  inline bool has_value_std__optional_double_(const std::optional<double>& optional) noexcept {
+    return optional.has_value();
+  }
+  inline double get_std__optional_double_(const std::optional<double>& optional) noexcept {
+    return *optional;
+  }
+  
+  // pragma MARK: std::function<void(const KeyEventData& /* keyEvent */)>
+  /**
+   * Specialized version of `std::function<void(const KeyEventData&)>`.
+   */
+  using Func_void_KeyEventData = std::function<void(const KeyEventData& /* keyEvent */)>;
+  /**
+   * Wrapper class for a `std::function<void(const KeyEventData& / * keyEvent * /)>`, this can be used from Swift.
+   */
+  class Func_void_KeyEventData_Wrapper final {
+  public:
+    explicit Func_void_KeyEventData_Wrapper(std::function<void(const KeyEventData& /* keyEvent */)>&& func): _function(std::make_unique<std::function<void(const KeyEventData& /* keyEvent */)>>(std::move(func))) {}
+    inline void call(KeyEventData keyEvent) const noexcept {
+      _function->operator()(keyEvent);
+    }
+  private:
+    std::unique_ptr<std::function<void(const KeyEventData& /* keyEvent */)>> _function;
+  } SWIFT_NONCOPYABLE;
+  Func_void_KeyEventData create_Func_void_KeyEventData(void* _Nonnull swiftClosureWrapper) noexcept;
+  inline Func_void_KeyEventData_Wrapper wrap_Func_void_KeyEventData(Func_void_KeyEventData value) noexcept {
+    return Func_void_KeyEventData_Wrapper(std::move(value));
+  }
+  
   // pragma MARK: std::shared_ptr<HybridNitroKeyEventSpec>
   /**
    * Specialized version of `std::shared_ptr<HybridNitroKeyEventSpec>`.
@@ -46,6 +89,15 @@ namespace margelo::nitro::keyevent::bridge::swift {
   }
   inline Result_double_ create_Result_double_(const std::exception_ptr& error) noexcept {
     return Result<double>::withError(error);
+  }
+  
+  // pragma MARK: Result<void>
+  using Result_void_ = Result<void>;
+  inline Result_void_ create_Result_void_() noexcept {
+    return Result<void>::withValue();
+  }
+  inline Result_void_ create_Result_void_(const std::exception_ptr& error) noexcept {
+    return Result<void>::withError(error);
   }
 
 } // namespace margelo::nitro::keyevent::bridge::swift

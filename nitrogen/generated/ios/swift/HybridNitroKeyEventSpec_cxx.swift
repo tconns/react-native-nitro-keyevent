@@ -120,4 +120,36 @@ open class HybridNitroKeyEventSpec_cxx {
       return bridge.create_Result_double_(__exceptionPtr)
     }
   }
+  
+  @inline(__always)
+  public final func onKeyDownListener(callback: bridge.Func_void_KeyEventData) -> bridge.Result_void_ {
+    do {
+      try self.__implementation.onKeyDownListener(callback: { () -> (KeyEventData) -> Void in
+        let __wrappedFunction = bridge.wrap_Func_void_KeyEventData(callback)
+        return { (__keyEvent: KeyEventData) -> Void in
+          __wrappedFunction.call(__keyEvent)
+        }
+      }())
+      return bridge.create_Result_void_()
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_void_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func onKeyUpListener(callback: bridge.Func_void_KeyEventData) -> bridge.Result_void_ {
+    do {
+      try self.__implementation.onKeyUpListener(callback: { () -> (KeyEventData) -> Void in
+        let __wrappedFunction = bridge.wrap_Func_void_KeyEventData(callback)
+        return { (__keyEvent: KeyEventData) -> Void in
+          __wrappedFunction.call(__keyEvent)
+        }
+      }())
+      return bridge.create_Result_void_()
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_void_(__exceptionPtr)
+    }
+  }
 }
