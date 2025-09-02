@@ -134,12 +134,18 @@ iOS support is currently in development. The module structure is ready for iOS i
 ## Usage
 
 ```typescript
-import { KeyEvent } from 'react-native-nitro-keyevent';
+import { 
+  onKeyDownListener, 
+  onKeyUpListener, 
+  removeKeyDownListener, 
+  removeKeyUpListener,
+  type KeyEventData 
+} from 'react-native-nitro-keyevent';
 
 const MyComponent = () => {
   useEffect(() => {
     // Listen for key down events
-    KeyEvent.onKeyDownListener((keyEvent) => {
+    onKeyDownListener((keyEvent: KeyEventData) => {
       console.log('Key Down:', {
         keyCode: keyEvent.keyCode,
         action: keyEvent.action,
@@ -149,7 +155,7 @@ const MyComponent = () => {
     });
 
     // Listen for key up events
-    KeyEvent.onKeyUpListener((keyEvent) => {
+    onKeyUpListener((keyEvent: KeyEventData) => {
       console.log('Key Up:', {
         keyCode: keyEvent.keyCode,
         action: keyEvent.action,
@@ -159,8 +165,8 @@ const MyComponent = () => {
 
     // Cleanup listeners on unmount
     return () => {
-      KeyEvent.removeKeyDownListener();
-      KeyEvent.removeKeyUpListener();
+      removeKeyDownListener();
+      removeKeyUpListener();
     };
   }, []);
 
@@ -174,9 +180,9 @@ const MyComponent = () => {
 
 ## API Reference
 
-### KeyEvent Class
+### Functions
 
-The main class for handling keyboard and hardware key events.
+The library exports simple functions for handling keyboard and hardware key events.
 
 #### `onKeyDownListener(callback: (event: KeyEventData) => void): void`
 
@@ -189,7 +195,9 @@ Registers a listener for key down events. This is triggered when a hardware key 
 **Example:**
 
 ```typescript
-KeyEvent.onKeyDownListener((keyEvent) => {
+import { onKeyDownListener } from 'react-native-nitro-keyevent';
+
+onKeyDownListener((keyEvent) => {
   console.log('Key pressed:', keyEvent.pressedKey)
   console.log('Key code:', keyEvent.keyCode)
   console.log('Repeat count:', keyEvent.repeatcount)
@@ -207,7 +215,9 @@ Registers a listener for key up events. This is triggered when a hardware key is
 **Example:**
 
 ```typescript
-KeyEvent.onKeyUpListener((keyEvent) => {
+import { onKeyUpListener } from 'react-native-nitro-keyevent';
+
+onKeyUpListener((keyEvent) => {
   console.log('Key released:', keyEvent.pressedKey)
   console.log('Key code:', keyEvent.keyCode)
 })
@@ -220,7 +230,9 @@ Removes the current key down event listener.
 **Example:**
 
 ```typescript
-KeyEvent.removeKeyDownListener()
+import { removeKeyDownListener } from 'react-native-nitro-keyevent';
+
+removeKeyDownListener()
 ```
 
 #### `removeKeyUpListener(): void`
@@ -230,7 +242,9 @@ Removes the current key up event listener.
 **Example:**
 
 ```typescript
-KeyEvent.removeKeyUpListener()
+import { removeKeyUpListener } from 'react-native-nitro-keyevent';
+
+removeKeyUpListener()
 ```
 
 ### KeyEventData Interface
@@ -268,11 +282,11 @@ For a complete list of Android key codes, see [Android KeyEvent Documentation](h
 ### Volume Button Control
 
 ```typescript
-import { KeyEvent } from 'react-native-nitro-keyevent';
+import { onKeyDownListener, removeKeyDownListener } from 'react-native-nitro-keyevent';
 
 const VolumeController = () => {
   useEffect(() => {
-    KeyEvent.onKeyDownListener((keyEvent) => {
+    onKeyDownListener((keyEvent) => {
       switch (keyEvent.keyCode) {
         case 24: // Volume Up
           console.log('Volume Up pressed');
@@ -286,7 +300,7 @@ const VolumeController = () => {
     });
 
     return () => {
-      KeyEvent.removeKeyDownListener();
+      removeKeyDownListener();
     };
   }, []);
 
@@ -301,13 +315,18 @@ const VolumeController = () => {
 ### External Keyboard Support
 
 ```typescript
-import { KeyEvent } from 'react-native-nitro-keyevent';
+import { 
+  onKeyDownListener, 
+  onKeyUpListener, 
+  removeKeyDownListener, 
+  removeKeyUpListener 
+} from 'react-native-nitro-keyevent';
 
 const ExternalKeyboardHandler = () => {
   const [pressedKeys, setPressedKeys] = useState<string[]>([]);
 
   useEffect(() => {
-    KeyEvent.onKeyDownListener((keyEvent) => {
+    onKeyDownListener((keyEvent) => {
       // Handle arrow keys for navigation
       switch (keyEvent.keyCode) {
         case 19: // DPAD_UP
@@ -332,7 +351,7 @@ const ExternalKeyboardHandler = () => {
       }
     });
 
-    KeyEvent.onKeyUpListener((keyEvent) => {
+    onKeyUpListener((keyEvent) => {
       // Remove key from pressed keys list
       setPressedKeys(prev =>
         prev.filter(key => key !== keyEvent.pressedKey)
@@ -340,8 +359,8 @@ const ExternalKeyboardHandler = () => {
     });
 
     return () => {
-      KeyEvent.removeKeyDownListener();
-      KeyEvent.removeKeyUpListener();
+      removeKeyDownListener();
+      removeKeyUpListener();
     };
   }, []);
 
@@ -357,7 +376,12 @@ const ExternalKeyboardHandler = () => {
 ### Gaming Controls
 
 ```typescript
-import { KeyEvent } from 'react-native-nitro-keyevent';
+import { 
+  onKeyDownListener, 
+  onKeyUpListener, 
+  removeKeyDownListener, 
+  removeKeyUpListener 
+} from 'react-native-nitro-keyevent';
 
 const GameController = () => {
   const [gameState, setGameState] = useState({
@@ -367,7 +391,7 @@ const GameController = () => {
   });
 
   useEffect(() => {
-    KeyEvent.onKeyDownListener((keyEvent) => {
+    onKeyDownListener((keyEvent) => {
       // Prevent multiple events on key repeat for jump action
       if (keyEvent.repeatcount && keyEvent.repeatcount > 0) {
         return; // Ignore repeated events
@@ -411,7 +435,7 @@ const GameController = () => {
       }
     });
 
-    KeyEvent.onKeyUpListener((keyEvent) => {
+    onKeyUpListener((keyEvent) => {
       // Stop movement when key is released
       switch (keyEvent.keyCode) {
         case 19: // DPAD_UP
@@ -428,8 +452,8 @@ const GameController = () => {
     });
 
     return () => {
-      KeyEvent.removeKeyDownListener();
-      KeyEvent.removeKeyUpListener();
+      removeKeyDownListener();
+      removeKeyUpListener();
     };
   }, []);
 
