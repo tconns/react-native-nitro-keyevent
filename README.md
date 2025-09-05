@@ -567,3 +567,7 @@ Special thanks to the following open-source projects which inspired and supporte
 ## License
 
 MIT © [Thành Công](https://github.com/tconns)
+          
+<a href="https://www.buymeacoffee.com/tconns94" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200"/>
+</a>
