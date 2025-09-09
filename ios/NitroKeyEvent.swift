@@ -5,10 +5,6 @@ class HybridNitroKeyEvent: HybridNitroKeyEventSpec {
     private var onKeyDownCallback: (([String: Any]) -> Void)?
     private var onKeyUpCallback: (([String: Any]) -> Void)?
 
-    func sum(num1: Double, num2: Double) throws -> Double {
-        return num1 + num2
-    }
-
     @objc func onKeyDown(_ callback: @escaping ([String: Any]) -> Void) {
         onKeyDownCallback = callback
     }

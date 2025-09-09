@@ -50,7 +50,6 @@ namespace margelo::nitro::keyevent {
 
     public:
       // Methods
-      virtual double sum(double num1, double num2) = 0;
       virtual void onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) = 0;
       virtual void onKeyUpListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) = 0;
 

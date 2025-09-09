@@ -9,7 +9,6 @@ export interface KeyEventData{
 
 export interface NitroKeyEvent
   extends HybridObject<{ ios: 'swift'; android: 'kotlin' }> {
-  sum(num1: number, num2: number): number
   onKeyDownListener(callback: (keyEvent: KeyEventData) => void): void
   onKeyUpListener(callback: (keyEvent: KeyEventData) => void): void
 }

@@ -110,18 +110,6 @@ open class HybridNitroKeyEventSpec_cxx {
 
   // Methods
   @inline(__always)
-  public final func sum(num1: Double, num2: Double) -> bridge.Result_double_ {
-    do {
-      let __result = try self.__implementation.sum(num1: num1, num2: num2)
-      let __resultCpp = __result
-      return bridge.create_Result_double_(__resultCpp)
-    } catch (let __error) {
-      let __exceptionPtr = __error.toCpp()
-      return bridge.create_Result_double_(__exceptionPtr)
-    }
-  }
-  
-  @inline(__always)
   public final func onKeyDownListener(callback: bridge.Func_void_KeyEventData) -> bridge.Result_void_ {
     do {
       try self.__implementation.onKeyDownListener(callback: { () -> (KeyEventData) -> Void in

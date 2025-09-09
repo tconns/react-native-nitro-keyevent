@@ -14,7 +14,6 @@ namespace margelo::nitro::keyevent {
     HybridObject::loadHybridMethods();
     // load custom methods/properties
     registerHybrids(this, [](Prototype& prototype) {
-      prototype.registerHybridMethod("sum", &HybridNitroKeyEventSpec::sum);
       prototype.registerHybridMethod("onKeyDownListener", &HybridNitroKeyEventSpec::onKeyDownListener);
       prototype.registerHybridMethod("onKeyUpListener", &HybridNitroKeyEventSpec::onKeyUpListener);
     });

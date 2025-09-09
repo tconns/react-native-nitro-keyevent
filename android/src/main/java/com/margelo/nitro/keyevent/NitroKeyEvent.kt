@@ -11,10 +11,6 @@ class NitroKeyEvent : HybridNitroKeyEventSpec(), KeyEventListeners {
     private var keyDownCallback: ((KeyEventData) -> Unit)? = null
     private var keyUpCallback: ((KeyEventData) -> Unit)? = null
 
-    override fun sum(num1: Double, num2: Double): Double {
-        return num1 + num2
-    }
-
     override fun onKeyDownListener(callback: (KeyEventData) -> Unit) {
         keyDownCallback = callback
     }
@@ -40,7 +36,7 @@ class NitroKeyEvent : HybridNitroKeyEventSpec(), KeyEventListeners {
             pressedKey = event.getUnicodeChar().toChar().toString(),
             repeatCount = null
         )
-        keyDownCallback?.invoke(data)
+        keyUpCallback?.invoke(data)
     }
 
     init {

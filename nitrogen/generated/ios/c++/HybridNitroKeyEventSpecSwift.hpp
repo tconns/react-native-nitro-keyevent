@@ -61,14 +61,6 @@ namespace margelo::nitro::keyevent {
 
   public:
     // Methods
-    inline double sum(double num1, double num2) override {
-      auto __result = _swiftPart.sum(std::forward<decltype(num1)>(num1), std::forward<decltype(num2)>(num2));
-      if (__result.hasError()) [[unlikely]] {
-        std::rethrow_exception(__result.error());
-      }
-      auto __value = std::move(__result.value());
-      return __value;
-    }
     inline void onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) override {
       auto __result = _swiftPart.onKeyDownListener(callback);
       if (__result.hasError()) [[unlikely]] {

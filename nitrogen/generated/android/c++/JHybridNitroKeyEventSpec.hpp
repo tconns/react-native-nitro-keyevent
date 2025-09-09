@@ -53,7 +53,6 @@ namespace margelo::nitro::keyevent {
 
   public:
     // Methods
-    double sum(double num1, double num2) override;
     void onKeyDownListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) override;
     void onKeyUpListener(const std::function<void(const KeyEventData& /* keyEvent */)>& callback) override;
 
